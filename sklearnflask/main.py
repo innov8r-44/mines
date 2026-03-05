@@ -15,7 +15,7 @@ training_data = 'data/titanic.csv'
 include = ['Age', 'Sex', 'Embarked', 'Survived']
 dependent_variable = include[-1]
 
-model_directory = 'model'
+model_directory = 'models'
 model_file_name = '%s/model.pkl' % model_directory
 model_columns_file_name = '%s/model_columns.pkl' % model_directory
 
@@ -123,6 +123,10 @@ def train():
     # capture a list of columns that will be used for prediction
     global model_columns
     model_columns = list(x.columns)
+    
+    # Create models directory if it doesn't exist
+    os.makedirs(model_directory, exist_ok=True)
+    
     joblib.dump(model_columns, model_columns_file_name)
 
     global clf
