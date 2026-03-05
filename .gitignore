@@ -146,7 +146,7 @@ cython_debug/
 
 # Project-specific
 *.pkl
-models/
+# models/
 
 # Venvs
 .venv/
@@ -154,6 +154,6 @@ models/
 .sklearnFlaskEnv/
 
 # Saved models
-models/
-*.keras
-*.pkl
+# models/
+# *.keras
+# *.pkl
